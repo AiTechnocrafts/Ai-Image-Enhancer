@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Image Enhancer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -44,6 +44,8 @@
     </div>
   </div>
 
+  <div class="ad-space">ADVERTISEMENT 1</div>
+
   <div class="preview-container">
     <div class="image-box">
       <p id="original-placeholder">Original image will appear here</p>
@@ -52,10 +54,17 @@
     <div class="image-box">
       <p id="enhanced-placeholder">Enhanced image will appear here</p>
       <img id="enhanced-image" style="display: none;" />
-      <button id="download-btn" style="display: none;">Download Enhanced Image</button>
-        <button>Download Enhanced Image</button>
+      <a id="download-link" href="#" download="enhanced-image.jpg" style="display:none;">
+        <button id="download-btn">Download Enhanced Image</button>
       </a>
     </div>
+  </div>
+
+  <div class="ad-space">ADVERTISEMENT 2</div>
+
+  <div class="description">
+    <h3>About this Tool:</h3>
+    <p>This AI Image Enhancer improves your image quality using PicsArt API. Just upload your image, select format and scale, and enhance in seconds.</p>
   </div>
 
   <script src="script.js"></script>
