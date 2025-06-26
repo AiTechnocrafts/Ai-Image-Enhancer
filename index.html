@@ -7,44 +7,56 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>🖼️ AI Image Enhancer Tool</h1>
-    <p class="description">
-      Upload your image, enhance it with AI upscaling (2x or 4x), and download the result in your desired format.
-    </p>
-  </header>
+  <h1>AI Image Enhancer</h1>
 
-  <div class="ad-space" id="ad-top">Ad Space 1</div>
+  <div class="upload-container">
+    <label for="image-upload" class="file-input-label" id="drop-area">
+      <p>Drag & drop your image here or click to browse</p>
+      <input type="file" id="image-upload" class="file-input" accept="image/*" />
+    </label>
 
-  <main>
-    <section class="upload-section">
-      <input type="file" id="image-upload" accept="image/*" />
-      <select id="upscale-factor">
-        <option value="2">2x</option>
-        <option value="4">4x</option>
-      </select>
-      <select id="output-format">
-        <option value="JPG">JPG</option>
-        <option value="PNG">PNG</option>
-        <option value="WEBP">WEBP</option>
-      </select>
-      <button id="enhance-btn">Enhance Image</button>
-    </section>
-
-    <section class="preview-section">
-      <div class="image-box">
-        <p>Original Image</p>
-        <img id="original-image" src="" alt="Original" />
+    <div class="controls">
+      <div class="control-group">
+        <label for="upscale-factor">Upscale Factor:</label>
+        <select id="upscale-factor">
+          <option value="2">2x</option>
+          <option value="4">4x</option>
+        </select>
       </div>
-      <div class="image-box">
-        <p>Enhanced Image</p>
-        <img id="enhanced-image" src="" alt="Enhanced" />
-        <a id="download-btn" href="#" download style="display: none;">⬇ Download Image</a>
-      </div>
-    </section>
-  </main>
 
-  <div class="ad-space" id="ad-bottom">Ad Space 2</div>
+      <div class="control-group">
+        <label for="output-format">Output Format:</label>
+        <select id="output-format">
+          <option value="JPG">JPG</option>
+          <option value="PNG">PNG</option>
+          <option value="WEBP">WEBP</option>
+        </select>
+      </div>
+
+      <button id="enhance-btn" disabled>Enhance Image</button>
+
+      <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+        <p>Enhancing your image...</p>
+      </div>
+
+      <div class="status" id="status"></div>
+    </div>
+  </div>
+
+  <div class="preview-container">
+    <div class="image-box">
+      <p id="original-placeholder">Original image will appear here</p>
+      <img id="original-image" style="display: none;" />
+    </div>
+    <div class="image-box">
+      <p id="enhanced-placeholder">Enhanced image will appear here</p>
+      <img id="enhanced-image" style="display: none;" />
+      <a id="download-link" href="#" download="enhanced-image.jpg" style="display:none;">
+        <button>Download Enhanced Image</button>
+      </a>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
