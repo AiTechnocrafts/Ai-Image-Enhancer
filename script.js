@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
     enhanceBtn.disabled = true;
 
     try {
-      const keyResponse = await fetch(`${BACKEND_BASE_URL}/get-api-key`);
+      const keyResponse = await fetch('https://ai-image-enhancer.replit.dev/get-api-key');
       const keyData = await keyResponse.json();
       const apiKey = keyData.apiKey;
 
