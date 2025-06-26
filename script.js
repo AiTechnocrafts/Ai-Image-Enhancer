@@ -103,6 +103,7 @@ document.addEventListener('DOMContentLoaded', function () {
         enhancedImage.src = data.data.url;
         enhancedImage.style.display = 'block';
         enhancedPlaceholder.style.display = 'none';
+        downloadBtn.style.display = 'inline-block';
 
         downloadLink.href = data.data.url;
         downloadLink.style.display = 'inline-block';
@@ -119,6 +120,17 @@ document.addEventListener('DOMContentLoaded', function () {
       enhanceBtn.disabled = false;
     }
   }
+  const downloadBtn = document.getElementById('download-btn');
+
+// Set image URL to download
+downloadBtn.onclick = () => {
+  const link = document.createElement('a');
+  link.href = enhancedImage.src;
+  link.download = 'enhanced-image.jpg';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
 
   function showStatus(message, type) {
     status.textContent = message;
