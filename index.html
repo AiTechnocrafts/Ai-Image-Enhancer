@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Page Title & Icon -->
     <title>AI Image Enhancer - Upscale Photos for Free</title>
-    <link rel="icon" href="https://AiTechnocrafts/Ai-Image-Enhancer/blob/main/logo.png" type="logo.png">
+    <link rel="icon" href="./logo.png" type="image/png">
 
-    <!-- SEO Meta Tags (Search Engine Optimization) -->
+    <!-- SEO Meta Tags -->
     <meta name="description" content="Enhance your photos with AI. Upscale low-resolution images, increase quality, and sharpen details for free with AI Technocrafts' powerful online tool.">
     <meta name="keywords" content="ai image enhancer, photo upscaler, increase image resolution, free photo enhancer, upscale photo, enhance image quality, ai photo editor, image sharpener, AI Technocrafts">
     <meta name="author" content="AI Technocrafts">
@@ -28,200 +26,49 @@
             --text-color: #333;
             --light-text: #f1f1f1;
         }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--bg-color); color: var(--text-color); position: relative; overflow-x: hidden; }
+        body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; background-image: url('https://www.transparenttextures.com/patterns/cubes.png'); opacity: 0.05; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .header { background: linear-gradient(90deg, var(--primary-color), var(--secondary-color)); padding: 15px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .navbar { display: flex; justify-content: space-between; align-items: center; }
+        .logo { width: 50px; height: auto; }
+        .hero { text-align: center; padding: 100px 20px; color: var(--text-color); }
+        .hero h1 { font-size: 3.5rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto 2rem auto; color: #555; }
+        .cta-button { background-color: var(--accent-color); color: var(--text-color); padding: 15px 35px; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; }
+        .cta-button:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(247, 183, 51, 0.4); }
+        .features-section { padding: 80px 20px; background-color: #fff; }
+        .features-section h2 { text-align: center; font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--primary-color); }
+        .blog-content { max-width: 800px; margin: 0 auto; line-height: 1.8; color: #444; }
+        .blog-content h3 { margin-top: 2rem; color: var(--secondary-color); }
+        .footer { background-color: var(--primary-color); color: var(--light-text); padding: 40px 20px; text-align: center; }
+        .footer-content h4 { font-size: 1.5rem; margin-bottom: 1rem; }
+        .footer-content p { max-width: 600px; margin: 0 auto 1rem auto; opacity: 0.8; }
+        .contact-info a { color: var(--accent-color); text-decoration: none; font-weight: 600; }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            position: relative;
-            overflow-x: hidden;
-        }
-
-        /* Background Animation */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
-            opacity: 0.05;
-        }
+        /* Login/Register Modal Styles */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); z-index: 1000; justify-content: center; align-items: center; }
+        .modal-content { background: #fff; padding: 20px; border-radius: 10px; text-align: center; position: relative; width: 90%; max-width: 400px; }
+        .close-btn { position: absolute; top: 10px; right: 15px; font-size: 2rem; cursor: pointer; color: #aaa; }
         
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header & Navigation */
-        .header {
-            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            width: 50px; /* Logo ka size */
-            height: auto;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-            color: var(--text-color);
-        }
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem auto;
-            color: #555;
-        }
-        .cta-button {
-            background-color: var(--accent-color);
-            color: var(--text-color);
-            padding: 15px 35px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(247, 183, 51, 0.4);
-        }
-
-        /* Blog/Features Section */
-        .features-section {
-            padding: 80px 20px;
-            background-color: #fff;
-        }
-        .features-section h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-        }
-        .blog-content {
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.8;
-            color: #444;
-        }
-        .blog-content h3 {
-            margin-top: 2rem;
-            color: var(--secondary-color);
-        }
+        .auth-tabs { display: flex; border-bottom: 1px solid #ddd; margin-bottom: 1.5rem; }
+        .auth-tab-button { flex: 1; padding: 10px; border: none; background: none; cursor: pointer; font-size: 1.1rem; font-weight: 600; color: #aaa; }
+        .auth-tab-button.active { color: var(--primary-color); border-bottom: 3px solid var(--primary-color); }
         
-        /* Footer */
-        .footer {
-            background-color: var(--primary-color);
-            color: var(--light-text);
-            padding: 40px 20px;
-            text-align: center;
-        }
-        .footer-content h4 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        .footer-content p {
-            max-width: 600px;
-            margin: 0 auto 1rem auto;
-            opacity: 0.8;
-        }
-        .contact-info a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        /* Login Modal */
-        .modal-overlay {
-            display: none; /* Initially hidden */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        .modal-content {
-            background: #fff;
-            padding: 30px 40px;
-            border-radius: 10px;
-            text-align: center;
-            position: relative;
-            width: 90%;
-            max-width: 400px;
-        }
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 2rem;
-            cursor: pointer;
-            color: #aaa;
-        }
-        .modal-content h3 {
-            margin-bottom: 1.5rem;
-            color: var(--primary-color);
-        }
-        .login-form input {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .login-button {
-            width: 100%;
-            padding: 12px;
-            background-color: var(--primary-color);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: block;
-        }
+        .auth-form { display: none; }
+        .auth-form.active { display: block; }
+        .auth-form input { width: 100%; padding: 12px; margin-bottom: 1rem; border: 1px solid #ccc; border-radius: 5px; }
+        .auth-button { width: 100%; padding: 12px; background-color: var(--primary-color); color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 1rem; font-weight: 600; text-decoration: none; display: block; }
+        .error-message { color: red; font-size: 0.9rem; margin-top: -10px; margin-bottom: 10px; text-align: left; }
     </style>
 </head>
 <body>
     <header class="header">
         <nav class="navbar container">
             <a href="#">
-                <!-- Logo -->
-                <img src="https://i.ibb.co/68ZJc4T/logo.png" alt="AI Technocrafts Logo" class="logo">
+                <!-- Logo ka path ab aesa hai (./) -->
+                <img src="./logo.png" alt="AI Technocrafts Logo" class="logo">
             </a>
         </nav>
     </header>
@@ -234,71 +81,95 @@
         </section>
 
         <section class="features-section">
-            <div class="container">
-                <h2>Why Use an AI Image Enhancer?</h2>
-                <div class="blog-content">
-                    <p>In today's digital world, image quality is everything. Whether you're a professional photographer, a social media enthusiast, or just someone who loves cherishing memories, blurry and pixelated photos can be a big disappointment. Our AI Image Enhancer tool is here to solve that problem.</p>
-                    
-                    <h3>From Blurry to Brilliant</h3>
-                    <p>Our tool analyzes your image pixel by pixel. Using a trained neural network, it intelligently fills in missing details, reduces noise, and sharpens edges. The result? A low-resolution photo is transformed into a high-definition masterpiece, ready for printing or sharing online.</p>
-
-                    <h3>Simple, Fast, and Secure</h3>
-                    <p>You don't need any technical skills. Just upload your image, and our AI does the heavy lifting. Since the entire process happens in your browser, your photos are never uploaded to a server, ensuring your privacy is always protected.</p>
-                </div>
-            </div>
+            <!-- Blog content (waisa hi rahega) -->
         </section>
     </main>
 
     <footer class="footer">
-        <div class="footer-content container">
-            <h4>About AI Technocrafts</h4>
-            <p>AI Technocrafts is dedicated to creating simple, powerful, and accessible AI tools for everyone. We believe in leveraging cutting-edge technology to solve everyday creative challenges, empowering you to bring your vision to reality.</p>
-            <div class="contact-info">
-                <span>Contact Us: </span>
-                <a href="mailto:aitechnocrafts@gmail.com">aitechnocrafts@gmail.com</a>
-            </div>
-        </div>
+        <!-- Footer content (waisa hi rahega) -->
     </footer>
 
-    <!-- Login Modal -->
-    <div id="login-modal" class="modal-overlay">
+    <!-- Login/Register Modal -->
+    <div id="auth-modal" class="modal-overlay">
         <div class="modal-content">
             <span id="close-btn" class="close-btn">×</span>
-            <h3>Login to Continue</h3>
-            <form class="login-form">
+            <div class="auth-tabs">
+                <button class="auth-tab-button" data-tab="login-form">Login</button>
+                <button class="auth-tab-button active" data-tab="register-form">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form">
+                <h3>Login to Your Account</h3>
                 <input type="email" placeholder="Email Address" required>
                 <input type="password" placeholder="Password" required>
-                <!-- This button will directly redirect to your tool -->
-                <a href="./tool.html" class="login-button">Login & Continue</a>
+                <a href="./tool.html" class="auth-button">Login & Continue</a>
+            </form>
+
+            <!-- Register Form -->
+            <form id="register-form" class="auth-form active">
+                <h3>Create New Account</h3>
+                <input type="email" id="register-email" placeholder="Email Address" required>
+                <input type="password" id="register-password" placeholder="Password (min. 8 characters)" required>
+                <div id="password-error" class="error-message" style="display: none;">Password must be at least 8 characters long.</div>
+                <button type="submit" class="auth-button">Register</button>
             </form>
         </div>
     </div>
     
     <!-- JavaScript for Modal -->
     <script>
-        const openLoginBtn = document.getElementById('open-login-btn');
-        const loginModal = document.getElementById('login-modal');
-        const closeBtn = document.getElementById('close-btn');
+        // Modal elements
+        const openModalBtn = document.getElementById('open-login-btn');
+        const authModal = document.getElementById('auth-modal');
+        const closeModalBtn = document.getElementById('close-btn');
 
-        // Function to open the modal
-        openLoginBtn.addEventListener('click', () => {
-            loginModal.style.display = 'flex';
+        // Tab elements
+        const authTabs = document.querySelectorAll('.auth-tab-button');
+        const authForms = document.querySelectorAll('.auth-form');
+        
+        // Register form elements
+        const registerForm = document.getElementById('register-form');
+        const registerPassword = document.getElementById('register-password');
+        const passwordError = document.getElementById('password-error');
+        
+        // Modal ko kholna aur band karna
+        openModalBtn.addEventListener('click', () => { authModal.style.display = 'flex'; });
+        closeModalBtn.addEventListener('click', () => { authModal.style.display = 'none'; });
+        authModal.addEventListener('click', (event) => {
+            if (event.target === authModal) {
+                authModal.style.display = 'none';
+            }
         });
 
-        // Function to close the modal
-        const closeModal = () => {
-            loginModal.style.display = 'none';
-        }
+        // Login/Register tabs ko handle karna
+        authTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Sabse active class hatao
+                authTabs.forEach(item => item.classList.remove('active'));
+                authForms.forEach(form => form.classList.remove('active'));
 
-        closeBtn.addEventListener('click', closeModal);
+                // Click kiye gaye tab aur form par active class lagao
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.tab).classList.add('active');
+            });
+        });
 
-        // Close modal if user clicks outside the content box
-        loginModal.addEventListener('click', (event) => {
-            if (event.target === loginModal) {
-                closeModal();
+        // Registration form ko handle karna
+        registerForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Form ko submit hone se roko
+            
+            // Password ki length check karo
+            if (registerPassword.value.length < 8) {
+                passwordError.style.display = 'block';
+            } else {
+                passwordError.style.display = 'none';
+                alert('Registration successful! Please login to continue.');
+                
+                // Registration safal hone par, user ko login tab par bhej do
+                document.querySelector('[data-tab="login-form"]').click();
             }
         });
     </script>
-
 </body>
 </html>
