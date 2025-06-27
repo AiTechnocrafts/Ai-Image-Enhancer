@@ -1,93 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AI Image Enhancer - Upscale and enhance your images with the power of AI. Free and premium image enhancement tool by AI Technocrafts." />
-  <meta name="keywords" content="AI image enhancer, image upscaler, photo enhancer, AI Technocrafts, online image tool, free image enhancer, image quality improver, image editor AI, image enhancement tool, photo upscaler AI">
-  <meta name="author" content="AI Technocrafts">
-  <title>AI Image Enhancer</title>
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('https://source.unsplash.com/1600x900/?technology,ai') no-repeat center center/cover;
-      color: white;
-      background-attachment: fixed;
-    }
-    header {
-      background-color: #004953cc;
-      padding: 10px 20px;
-      display: flex;
-      align-items: center;
-    }
-    header img {
-      height: 50px;
-      margin-right: 15px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 24px;
-    }
-    .container {
-      padding: 40px;
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.6);
-    }
-    .container h2 {
-      color: #00e0a3;
-      margin-bottom: 20px;
-    }
-    .container p {
-      font-size: 18px;
-      max-width: 800px;
-      margin: 0 auto 30px;
-    }
-    .btn {
-      padding: 15px 30px;
-      font-size: 18px;
-      background-color: #00e0a3;
-      border: none;
-      border-radius: 5px;
-      color: #004953;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .btn:hover {
-      background-color: #00b387;
-    }
-    footer {
-      background-color: #002e2e;
-      padding: 20px;
-      text-align: center;
-      font-size: 14px;
-      color: #ccc;
-    }
-    footer a {
-      color: #00e0a3;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title & Icon -->
+    <title>AI Image Enhancer - Upscale Photos for Free</title>
+    <link rel="icon" href="https://i.ibb.co/68ZJc4T/logo.png" type="image/png">
+
+    <!-- SEO Meta Tags (Search Engine Optimization) -->
+    <meta name="description" content="Enhance your photos with AI. Upscale low-resolution images, increase quality, and sharpen details for free with AI Technocrafts' powerful online tool.">
+    <meta name="keywords" content="ai image enhancer, photo upscaler, increase image resolution, free photo enhancer, upscale photo, enhance image quality, ai photo editor, image sharpener, AI Technocrafts">
+    <meta name="author" content="AI Technocrafts">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Styles -->
+    <style>
+        :root {
+            --primary-color: #004953;
+            --secondary-color: #007a8a;
+            --accent-color: #f7b733;
+            --bg-color: #f4f7f6;
+            --text-color: #333;
+            --light-text: #f1f1f1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Background Animation */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-image: url('https://www.transparenttextures.com/patterns/cubes.png');
+            opacity: 0.05;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        .header {
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            width: 50px; /* Logo ka size */
+            height: auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            color: var(--text-color);
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2rem auto;
+            color: #555;
+        }
+        .cta-button {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(247, 183, 51, 0.4);
+        }
+
+        /* Blog/Features Section */
+        .features-section {
+            padding: 80px 20px;
+            background-color: #fff;
+        }
+        .features-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        .blog-content {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: #444;
+        }
+        .blog-content h3 {
+            margin-top: 2rem;
+            color: var(--secondary-color);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--primary-color);
+            color: var(--light-text);
+            padding: 40px 20px;
+            text-align: center;
+        }
+        .footer-content h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .footer-content p {
+            max-width: 600px;
+            margin: 0 auto 1rem auto;
+            opacity: 0.8;
+        }
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Login Modal */
+        .modal-overlay {
+            display: none; /* Initially hidden */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 10px;
+            text-align: center;
+            position: relative;
+            width: 90%;
+            max-width: 400px;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #aaa;
+        }
+        .modal-content h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        .login-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-button {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: block;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <img src="logo.png" alt="AI Technocrafts Logo" />
-    <h1>AI Image Enhancer</h1>
-  </header>
-  <div class="container">
-    <h2>Welcome to AI Image Enhancer</h2>
-    <p>
-      AI Image Enhancer is an advanced online tool powered by artificial intelligence that allows you to upscale, sharpen, and enhance your images instantly. Whether you're a designer, photographer, student, or enthusiast — enhance your photos up to 4x without losing quality. Our tool supports JPG, PNG, and WEBP formats.
-    </p>
-    <p><strong>Note:</strong> A premium version is coming soon with faster processing and higher resolution limits.</p>
-    <button class="btn" onclick="window.location.href='login.html'">Continue to Tool</button>
-  </div>
+    <header class="header">
+        <nav class="navbar container">
+            <a href="#">
+                <!-- Logo -->
+                <img src="https://i.ibb.co/68ZJc4T/logo.png" alt="AI Technocrafts Logo" class="logo">
+            </a>
+        </nav>
+    </header>
 
-  <footer>
-    <p>© 2025 <strong>AI Technocrafts</strong>. Building innovative AI-powered web & app tools for everyone.<br>
-    Contact: <a href="mailto:aitechnocrafts@gmail.com">aitechnocrafts@gmail.com</a></p>
-  </footer>
+    <main>
+        <section class="hero">
+            <h1>Bring Your Photos to Life</h1>
+            <p>Tired of blurry, low-quality images? Our AI Image Enhancer uses advanced algorithms to upscale your photos, sharpen details, and improve overall quality instantly. For free.</p>
+            <button id="open-login-btn" class="cta-button">Enhance Your Image Now</button>
+        </section>
+
+        <section class="features-section">
+            <div class="container">
+                <h2>Why Use an AI Image Enhancer?</h2>
+                <div class="blog-content">
+                    <p>In today's digital world, image quality is everything. Whether you're a professional photographer, a social media enthusiast, or just someone who loves cherishing memories, blurry and pixelated photos can be a big disappointment. Our AI Image Enhancer tool is here to solve that problem.</p>
+                    
+                    <h3>From Blurry to Brilliant</h3>
+                    <p>Our tool analyzes your image pixel by pixel. Using a trained neural network, it intelligently fills in missing details, reduces noise, and sharpens edges. The result? A low-resolution photo is transformed into a high-definition masterpiece, ready for printing or sharing online.</p>
+
+                    <h3>Simple, Fast, and Secure</h3>
+                    <p>You don't need any technical skills. Just upload your image, and our AI does the heavy lifting. Since the entire process happens in your browser, your photos are never uploaded to a server, ensuring your privacy is always protected.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content container">
+            <h4>About AI Technocrafts</h4>
+            <p>AI Technocrafts is dedicated to creating simple, powerful, and accessible AI tools for everyone. We believe in leveraging cutting-edge technology to solve everyday creative challenges, empowering you to bring your vision to reality.</p>
+            <div class="contact-info">
+                <span>Contact Us: </span>
+                <a href="mailto:aitechnocrafts@gmail.com">aitechnocrafts@gmail.com</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span id="close-btn" class="close-btn">×</span>
+            <h3>Login to Continue</h3>
+            <form class="login-form">
+                <input type="email" placeholder="Email Address" required>
+                <input type="password" placeholder="Password" required>
+                <!-- This button will directly redirect to your tool -->
+                <a href="https://aitechnocrafts.github.io/Ai-Image-Enhancer" class="login-button">Login & Continue</a>
+            </form>
+        </div>
+    </div>
+    
+    <!-- JavaScript for Modal -->
+    <script>
+        const openLoginBtn = document.getElementById('open-login-btn');
+        const loginModal = document.getElementById('login-modal');
+        const closeBtn = document.getElementById('close-btn');
+
+        // Function to open the modal
+        openLoginBtn.addEventListener('click', () => {
+            loginModal.style.display = 'flex';
+        });
+
+        // Function to close the modal
+        const closeModal = () => {
+            loginModal.style.display = 'none';
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+
+        // Close modal if user clicks outside the content box
+        loginModal.addEventListener('click', (event) => {
+            if (event.target === loginModal) {
+                closeModal();
+            }
+        });
+    </script>
+
 </body>
 </html>
