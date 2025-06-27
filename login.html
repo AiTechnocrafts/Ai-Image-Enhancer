@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - AI Image Enhancer</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #f0f4f4;
+      font-family: Arial, sans-serif;
+    }
+
+    .login-container {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-top: 5px solid #004953;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      color: #004953;
+      margin-bottom: 20px;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 12px;
+      background-color: #004953;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .login-container button:hover {
+      background-color: #00303a;
+    }
+
+    .login-container p {
+      font-size: 14px;
+      color: #777;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>User Login</h2>
+    <form onsubmit="handleLogin(event)">
+      <input type="email" id="email" placeholder="Enter your email" required />
+      <input type="password" id="password" placeholder="Enter your password" required />
+      <button type="submit">Login</button>
+    </form>
+    <p>Don't have an account? Future versions will allow registration.</p>
+  </div>
+
+  <script>
+    function handleLogin(e) {
+      e.preventDefault();
+      // For now, redirect directly to your enhancer tool (after basic validation)
+      window.location.href = "https://aitechnocrafts.github.io/Ai-Image-Enhancer";
+    }
+  </script>
+</body>
+</html>
