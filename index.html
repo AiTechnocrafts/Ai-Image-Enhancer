@@ -46,6 +46,7 @@
         .footer-content h4 { font-size: 1.5rem; margin-bottom: 1rem; }
         .footer-content p { max-width: 600px; margin: 0 auto 1rem auto; opacity: 0.8; }
         .contact-info a { color: var(--accent-color); text-decoration: none; font-weight: 600; }
+        .ad-container { text-align: center; margin: 40px 0; } /* Ad ke liye naya style */
 
         /* Login/Register Modal Styles */
         .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.6); z-index: 1000; justify-content: center; align-items: center; }
@@ -67,7 +68,6 @@
     <header class="header">
         <nav class="navbar container">
             <a href="#">
-                <!-- Logo ka path ab aesa hai (./) -->
                 <img src="./logo.png" alt="AI Technocrafts Logo" class="logo">
             </a>
         </nav>
@@ -80,13 +80,44 @@
             <button id="open-login-btn" class="cta-button">Enhance Your Image Now</button>
         </section>
 
+        <!-- =========== Ad Code 1 Yahan Lagaya Hai =========== -->
+        <div class="ad-container">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : '10b3c689265e32a7f2ba1e17ac6cb366',
+                    'format' : 'iframe',
+                    'height' : 50,
+                    'width' : 320,
+                    'params' : {}
+                };
+            </script>
+            <script type="text/javascript" src="//www.highperformanceformat.com/10b3c689265e32a7f2ba1e17ac6cb366/invoke.js"></script>
+        </div>
+
+
         <section class="features-section">
-            <!-- Blog content (waisa hi rahega) -->
+            <div class="container">
+                <h2>Why Use an AI Image Enhancer?</h2>
+                <div class="blog-content">
+                    <p>In today's digital world, image quality is everything. Whether you're a professional photographer, a social media enthusiast, or just someone who loves cherishing memories, blurry and pixelated photos can be a big disappointment. Our AI Image Enhancer tool is here to solve that problem.</p>
+                    <h3>From Blurry to Brilliant</h3>
+                    <p>Our tool analyzes your image pixel by pixel. Using a trained neural network, it intelligently fills in missing details, reduces noise, and sharpens edges. The result? A low-resolution photo is transformed into a high-definition masterpiece, ready for printing or sharing online.</p>
+                    <h3>Simple, Fast, and Secure</h3>
+                    <p>You don't need any technical skills. Just upload your image, and our AI does the heavy lifting. Since the entire process happens in your browser, your photos are never uploaded to a server, ensuring your privacy is always protected.</p>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer class="footer">
-        <!-- Footer content (waisa hi rahega) -->
+        <div class="footer-content container">
+            <h4>About AI Technocrafts</h4>
+            <p>AI Technocrafts is dedicated to creating simple, powerful, and accessible AI tools for everyone. We believe in leveraging cutting-edge technology to solve everyday creative challenges, empowering you to bring your vision to reality.</p>
+            <div class="contact-info">
+                <span>Contact Us: </span>
+                <a href="mailto:aitechnocrafts@gmail.com">aitechnocrafts@gmail.com</a>
+            </div>
+        </div>
     </footer>
 
     <!-- Login/Register Modal -->
@@ -97,7 +128,6 @@
                 <button class="auth-tab-button" data-tab="login-form">Login</button>
                 <button class="auth-tab-button active" data-tab="register-form">Register</button>
             </div>
-
             <!-- Login Form -->
             <form id="login-form" class="auth-form">
                 <h3>Login to Your Account</h3>
@@ -105,7 +135,6 @@
                 <input type="password" placeholder="Password" required>
                 <a href="./tool.html" class="auth-button">Login & Continue</a>
             </form>
-
             <!-- Register Form -->
             <form id="register-form" class="auth-form active">
                 <h3>Create New Account</h3>
@@ -145,11 +174,8 @@
         // Login/Register tabs ko handle karna
         authTabs.forEach(tab => {
             tab.addEventListener('click', () => {
-                // Sabse active class hatao
                 authTabs.forEach(item => item.classList.remove('active'));
                 authForms.forEach(form => form.classList.remove('active'));
-
-                // Click kiye gaye tab aur form par active class lagao
                 tab.classList.add('active');
                 document.getElementById(tab.dataset.tab).classList.add('active');
             });
@@ -157,30 +183,20 @@
 
         // Registration form ko handle karna
         registerForm.addEventListener('submit', (event) => {
-            event.preventDefault(); // Form ko submit hone se roko
-            
-            // Password ki length check karo
+            event.preventDefault(); 
             if (registerPassword.value.length < 8) {
                 passwordError.style.display = 'block';
             } else {
                 passwordError.style.display = 'none';
                 alert('Registration successful! Please login to continue.');
-                
-                // Registration safal hone par, user ko login tab par bhej do
                 document.querySelector('[data-tab="login-form"]').click();
             }
         });
     </script>
+
+    <!-- =========== Ad Code 2 (Social Bar) Yahan Lagaya Hai =========== -->
+    <div id="container-e54c93f45e444a48f6cc1cbbd07d09d2"></div>
+    <script async="async" data-cfasync="false" src="//pl26953775.profitableratecpm.com/e54c93f45e444a48f6cc1cbbd07d09d2/invoke.js"></script>
+
 </body>
-	<script type="text/javascript">
-	atOptions = {
-		'key' : '10b3c689265e32a7f2ba1e17ac6cb366',
-		'format' : 'iframe',
-		'height' : 50,
-		'width' : 320,
-		'params' : {}
-	};
-</script>
-<script type="text/javascript" src="//www.highperformanceformat.com/10b3c689265e32a7f2ba1e17ac6cb366/invoke.js"></script>
-	
 </html>
