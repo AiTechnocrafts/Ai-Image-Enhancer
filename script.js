@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
     enhanceBtn.disabled = true;
 
     try {
-      const keyResponse = await fetch('https://image-enhancer-backend-9vga.onrender.com');
+      const keyResponse = await fetch('https://e53ebf39-19d4-4a2a-971e-ca40d99efbc0-00-2mjr5g76ux38q.sisko.replit.dev/get-api-key');
       const keyData = await keyResponse.json();
       const apiKey = keyData.apiKey;
 
