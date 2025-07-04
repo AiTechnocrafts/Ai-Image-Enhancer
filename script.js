@@ -10,13 +10,15 @@ document.addEventListener('DOMContentLoaded', function () {
   const outputFormat = document.getElementById('output-format');
   const loading = document.getElementById('loading');
   const status = document.getElementById('status');
+  const downloadBtn = document.getElementById('download-btn');
   const downloadLink = document.getElementById('download-link');
 
   let selectedFile = null;
 
-  // 👇👇👇 EDIT THIS URL 👇👇👇
-  const BACKEND_BASE_URL = "https://image-enhancer-backend-9vga.onrender.com";
+  // ✅ Backend Render URL yahan paste karo
+  const BACKEND_BASE_URL = "https://image-enhancer-backend.onrender.com";
 
+  // Drag-drop styling
   dropArea.addEventListener('dragover', (e) => {
     e.preventDefault();
     dropArea.style.backgroundColor = '#e9ecef';
@@ -78,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function () {
     enhanceBtn.disabled = true;
 
     try {
-      const keyResponse = await fetch('https://image-enhancer-backend-9vga.onrender.com/get-api-key');
+      const keyResponse = await fetch(`${BACKEND_BASE_URL}/get-api-key`);
       const keyData = await keyResponse.json();
       const apiKey = keyData.apiKey;
 
@@ -104,9 +106,8 @@ document.addEventListener('DOMContentLoaded', function () {
         enhancedImage.style.display = 'block';
         enhancedPlaceholder.style.display = 'none';
         downloadBtn.style.display = 'inline-block';
-
-        downloadLink.href = data.data.url;
         downloadLink.style.display = 'inline-block';
+        downloadLink.href = data.data.url;
 
         showStatus('Image enhanced successfully!', 'success');
       } else {
@@ -120,17 +121,17 @@ document.addEventListener('DOMContentLoaded', function () {
       enhanceBtn.disabled = false;
     }
   }
-  const downloadBtn = document.getElementById('download-btn');
 
-// Set image URL to download
-downloadBtn.onclick = () => {
-  const link = document.createElement('a');
-  link.href = enhancedImage.src;
-  link.download = 'enhanced-image.jpg';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-};
+  // ✅ Force download the enhanced image
+  downloadBtn.onclick = () => {
+    const imageUrl = enhancedImage.src;
+    const link = document.createElement('a');
+    link.href = imageUrl;
+    link.setAttribute('download', 'enhanced-image.jpg');
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   function showStatus(message, type) {
     status.textContent = message;
