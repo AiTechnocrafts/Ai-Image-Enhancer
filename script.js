@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let selectedFile = null;
 
   // 👇👇👇 EDIT THIS URL 👇👇👇
-  const BACKEND_BASE_URL = "https://e53ebf39-19d4-4a2a-971e-ca40d99efbc0-00-2mjr5g76ux38q.sisko.replit.dev";
+  const BACKEND_BASE_URL = "https://image-enhancer-backend-9vga.onrender.com";
 
   dropArea.addEventListener('dragover', (e) => {
     e.preventDefault();
